@@ -3,8 +3,8 @@ import { Request, Response } from 'express';
 import productsService from '../services/products.service';
 
 const registerNewProduct = async (req:Request, res:Response) => {
-  const result = await productsService.registerNewProduct(req.body);
-  return res.status(201).json(result);
+  const { message } = await productsService.registerNewProduct(req.body);
+  return res.status(201).json(message);
 }; 
 
 const productsController = { registerNewProduct };

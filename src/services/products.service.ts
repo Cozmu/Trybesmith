@@ -1,9 +1,10 @@
 import { IProducts } from '../interfaces';
 import productsModel from '../models/products.model';
 
-const registerNewProduct = async (body:IProducts):Promise<IProducts> => {
+const registerNewProduct = async (body:IProducts)
+:Promise<{ type: null | string, message: IProducts | string }> => {
   const result = await productsModel.createNewProduct(body);
-  return result;
+  return { type: null, message: result };
 };
 
 const productsService = { registerNewProduct };
