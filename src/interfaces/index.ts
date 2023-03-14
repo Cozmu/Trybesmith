@@ -2,7 +2,7 @@ export interface IProducts {
   id?: number,
   name: string,
   amount: string,
-  order_id?: number,
+  orderId?: number,
 }
 
 export interface IUser {
@@ -18,4 +18,10 @@ export interface IToken {
   username: string,
   vocation: string,
   level: number,
+}
+
+export interface IOrder {
+  id: number,
+  userId: number,
+  productsIds: number[],
 }
