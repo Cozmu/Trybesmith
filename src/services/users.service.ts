@@ -2,9 +2,9 @@ import usersModel from '../models/users.model';
 import { IUser, IToken } from '../interfaces';
 
 const registerNewUser = async (body:IUser)
-:Promise<{ type: null | string, message: IToken | string }> => {
+:Promise<IToken> => {
   const result = await usersModel.createNewUser(body);
-  return { type: null, message: result };
+  return result;
 };
 
 const usersService = { registerNewUser }; 

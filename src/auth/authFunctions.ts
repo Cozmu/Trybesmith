@@ -11,7 +11,7 @@ const JWT_CONFIG:SignOptions = {
   expiresIn: '1d',
 };
 
-const createToken = (data:IToken | string) => jwt.sign(data, SECRETE, JWT_CONFIG);
+const createToken = (data:IToken):string => jwt.sign(data, SECRETE, JWT_CONFIG);
 
 // const verifyToken = (token) => jwt.verify(token, SECRETE); // perguntar futuramente
 

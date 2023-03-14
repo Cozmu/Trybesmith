@@ -2,14 +2,14 @@ import { IProducts } from '../interfaces';
 import productsModel from '../models/products.model';
 
 const registerNewProduct = async (body:IProducts)
-:Promise<{ type: null | string, message: IProducts | string }> => {
+:Promise<IProducts> => {
   const result = await productsModel.createNewProduct(body);
-  return { type: null, message: result };
+  return result;
 };
 
-const getAllProducts = async ():Promise<{ type: null, message: IProducts[] }> => {
+const getAllProducts = async ():Promise<IProducts[]> => {
   const result = await productsModel.findAllProducts();
-  return { type: null, message: result };
+  return result;
 };
 
 const productsService = { getAllProducts, registerNewProduct };
