@@ -7,6 +7,11 @@ const registerNewProduct = async (req:Request, res:Response) => {
   return res.status(201).json(message);
 }; 
 
-const productsController = { registerNewProduct };
+const listAllProducts = async (req: Request, res: Response) => {
+  const { message } = await productsService.getAllProducts();
+  return res.status(200).json(message);
+};
+
+const productsController = { listAllProducts, registerNewProduct };
 
 export default productsController;

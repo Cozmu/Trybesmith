@@ -7,6 +7,11 @@ const registerNewProduct = async (body:IProducts)
   return { type: null, message: result };
 };
 
-const productsService = { registerNewProduct };
+const getAllProducts = async ():Promise<{ type: null, message: IProducts[] }> => {
+  const result = await productsModel.findAllProducts();
+  return { type: null, message: result };
+};
+
+const productsService = { getAllProducts, registerNewProduct };
 
 export default productsService;
