@@ -10,6 +10,17 @@ const validateNewProducts = Joi.object().keys({
   amount: Joi.string().min(3).required(),
 });
 
-const validations = { validateLoginEntries, validateNewProducts };
+const validateNewUsers = Joi.object().keys({
+  username: Joi.string().min(3).required(),
+  vocation: Joi.string().min(3).required(),
+  level: Joi.number().min(1).required(),
+  password: Joi.string().min(8).required(),
+});
+
+const validations = { 
+  validateLoginEntries, 
+  validateNewProducts,
+  validateNewUsers,
+};
 
 export default validations;
