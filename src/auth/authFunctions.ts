@@ -13,8 +13,7 @@ const JWT_CONFIG:SignOptions = {
 
 const createToken = (data:IToken):string => jwt.sign(data, SECRETE, JWT_CONFIG);
 
-// const verifyToken = (token) => jwt.verify(token, SECRETE); // perguntar futuramente
-
-const authFunctions = { createToken };
+const verifyToken = (token:string) => jwt.verify(token, SECRETE); 
+const authFunctions = { createToken, verifyToken };
 
 export default authFunctions;

@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-// import { IProducts } from '../interfaces';
 import productsService from '../services/products.service';
 
 const registerNewProduct = async (req:Request, res:Response) => {

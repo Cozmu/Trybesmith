@@ -17,10 +17,18 @@ const validateNewUsers = Joi.object().keys({
   password: Joi.string().min(8).required(),
 });
 
+const validateNewOrders = Joi.array().min(1).required()
+  .messages({ 
+    'array.min': '"productsIds" must include only numbers', 
+    'any.required': '"productsIds" is required',
+    'array.base': '"productsIds" must be an array',
+  });
+
 const validations = { 
   validateLoginEntries, 
   validateNewProducts,
   validateNewUsers,
+  validateNewOrders,
 };
 
 export default validations;

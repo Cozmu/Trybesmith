@@ -18,6 +18,13 @@ const findAllProducts = async ():Promise<IProducts[]> => {
   return result;
 };
 
-const productsModel = { findAllProducts, createNewProduct };
+const updateProduct = async (productIds:number, orderId:number):Promise<void> => {
+  await connection.execute(
+    'UPDATE Trybesmith.products SET order_id = ? WHERE id = ?',
+    [orderId, productIds],
+  );
+};
+
+const productsModel = { findAllProducts, createNewProduct, updateProduct };
 
 export default productsModel;
